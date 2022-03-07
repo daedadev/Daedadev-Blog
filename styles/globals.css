@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-#markdown pre {
-  background-color: rgba(214, 214, 214, 0.603);
+pre {
   border-radius: 5px;
   padding: 20px;
   margin-top: 10px;
@@ -39,4 +38,94 @@
 
 #markdown {
   margin-top: 20px;
+}
+
+/* -------------------------------------------------------- */
+
+#markdown-dark pre {
+  color: #ffffff;
+  background: #1c1b1b;
+}
+
+#markdown-dark .hljs-subst {
+  color: #ffffff;
+}
+
+#markdown-dark .hljs-comment {
+  color: #999999;
+}
+
+#markdown-dark .hljs-keyword,
+#markdown-dark .hljs-selector-tag,
+#markdown-dark .hljs-meta .hljs-keyword,
+#markdown-dark .hljs-doctag,
+#markdown-dark .hljs-section {
+  color: #88aece;
+}
+
+#markdown-dark .hljs-attr {
+  color: #88aece;
+}
+
+#markdown-dark .hljs-attribute {
+  color: #c59bc1;
+}
+
+#markdown-dark .hljs-name,
+#markdown-dark .hljs-type,
+#markdown-dark .hljs-number,
+#markdown-dark .hljs-selector-id,
+#markdown-dark .hljs-quote,
+#markdown-dark .hljs-template-tag {
+  color: #f08d49;
+}
+
+#markdown-dark .hljs-selector-class {
+  color: #88aece;
+}
+
+#markdown-dark .hljs-string,
+#markdown-dark .hljs-regexp,
+#markdown-dark .hljs-symbol,
+#markdown-dark .hljs-variable,
+#markdown-dark .hljs-template-variable,
+#markdown-dark .hljs-link,
+#markdown-dark .hljs-selector-attr {
+  color: #b5bd68;
+}
+
+#markdown-dark .hljs-meta,
+#markdown-dark .hljs-selector-pseudo {
+  color: #88aece;
+}
+
+#markdown-dark .hljs-built_in,
+#markdown-dark .hljs-title,
+#markdown-dark .hljs-literal {
+  color: #f08d49;
+}
+
+#markdown-dark .hljs-bullet,
+#markdown-dark .hljs-code {
+  color: #cccccc;
+}
+
+#markdown-dark .hljs-meta .hljs-string {
+  color: #b5bd68;
+}
+
+#markdown-dark .hljs-deletion {
+  color: #de7176;
+}
+
+#markdown-dark .hljs-addition {
+  color: #76c490;
+}
+
+#markdown-dark .hljs-emphasis {
+  font-style: italic;
+}
+
+#markdown-dark .hljs-strong {
+  font-weight: bold;
 }

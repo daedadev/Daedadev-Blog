@@ -1,15 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
+const hljs = require("highlight.js");
 
 export default function PostPage({
   frontmatter: { title, date, cover_image, excerpt },
   slug,
   content,
 }) {
+  const [theme, setTheme] = useState("markdown-dark");
+  marked.setOptions({
+    langPrefix: "hljs language-",
+    highlight: function (code) {
+      return hljs.highlightAuto(code, ["html", "javascript"]).value;
+    },
+  });
+
   return (
     <>
       <Head>
@@ -26,8 +35,11 @@ export default function PostPage({
             </div>
             <img src={cover_image}></img>
           </div>
-          <div id="markdown" className="flex flex-col pl-20 pr-20">
-            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+          <div id={theme} className="flex flex-col pl-20 pr-20">
+            <div
+              id="markdown"
+              dangerouslySetInnerHTML={{ __html: marked(content) }}
+            ></div>
           </div>
         </section>
       </section>
