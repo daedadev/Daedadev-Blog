@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#markdown pre {
+  background-color: rgba(214, 214, 214, 0.603);
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#markdown h2 {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#markdown ol {
+  list-style: inside;
+  list-style-type: decimal;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#markdown li {
+  font-weight: 500;
+  font-size: large;
+}
+
+#markdown a {
+  color: rgb(0, 225, 255);
+}
+
+#markdown p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+#markdown {
+  margin-top: 20px;
+}

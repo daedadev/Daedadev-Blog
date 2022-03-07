@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Link from "next/link";
 import { marked } from "marked";
 
 export default function PostPage({
@@ -18,19 +17,16 @@ export default function PostPage({
         <meta name="description" content={excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="flex flex-col items-center min-h-screen bg-slate-600">
+      <section className="flex flex-col items-center min-h-screen bg-slate-600 pb-20">
         <section className="flex flex-row flex-wrap justify-center w-748">
           <div>
-            <Link href="/">
-              <a>Go Back</a>
-            </Link>
-          </div>
-          <div>
-            <h1>{title}</h1>
-            <div>Posted on {date}</div>
+            <h1 className="text-5xl mt-10 mb-5 ">{title}</h1>
+            <div className="bg-slate-700 text-slate-300 mb-5 pl-5">
+              Posted on {date}
+            </div>
             <img src={cover_image}></img>
           </div>
-          <div className="flex flex-col pl-20 pr-20">
+          <div id="markdown" className="flex flex-col pl-20 pr-20">
             <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
           </div>
         </section>
