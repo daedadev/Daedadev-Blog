@@ -5,6 +5,7 @@ import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 import { useGlobal } from "../../context/globalContext";
+import Header from "../../components/header";
 const hljs = require("highlight.js");
 
 export default function PostPage({
@@ -12,6 +13,7 @@ export default function PostPage({
   slug,
   content,
 }) {
+  const [scrollCount, setScrollCount] = useState(0);
   const { darkMode, toggleDarkMode } = useGlobal();
 
   marked.setOptions({
@@ -21,6 +23,21 @@ export default function PostPage({
     },
   });
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  const handleScroll = () => {
+    const MaxHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const ScrollPercent = (window.scrollY / MaxHeight) * 100;
+
+    console.log(document.documentElement.clientHeight);
+    setScrollCount(ScrollPercent);
+  };
+
   return (
     <>
       <Head>
@@ -28,21 +45,45 @@ export default function PostPage({
         <meta name="description" content={excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div
+        className={
+          darkMode
+            ? "sticky top-0 left-0 bg-slate-600 transition-all"
+            : "sticky top-0 left-0 bg-white transition-all"
+        }
+      >
+        <Header />
+        <div
+          className={
+            darkMode ? "bg-slate-400 h-1 z-0 " : "bg-slate-600 h-1 z-0"
+          }
+          style={{ width: `${scrollCount}%` }}
+        ></div>
+      </div>
+
       <section
         className={
           darkMode
-            ? "flex flex-col items-center min-h-screen bg-slate-600 pb-20"
-            : "flex flex-col items-center min-h-screen bg-white pb-20"
+            ? "flex flex-col items-center min-h-screen bg-slate-600 pb-20 transition-all"
+            : "flex flex-col items-center min-h-screen bg-white pb-20 transition-all"
         }
       >
         <section className="flex flex-row flex-wrap justify-center w-748">
           <div>
-            <h1 className="text-5xl mt-10 mb-5 ">{title}</h1>
+            <h1
+              className={
+                darkMode
+                  ? "text-5xl mt-10 mb-5 text-slate-100"
+                  : "text-5xl mt-10 mb-5 text-black"
+              }
+            >
+              {title}
+            </h1>
             <div
               className={
                 darkMode
-                  ? "bg-slate-700 text-slate-300 mb-5 pl-5"
-                  : "bg-slate-300 text-slate-800 mb-5 pl-5"
+                  ? "bg-slate-700 text-slate-300 mb-5 pl-5 transition-all"
+                  : "bg-slate-300 text-slate-800 mb-5 pl-5 transition-all"
               }
             >
               Posted on {date}
@@ -51,12 +92,9 @@ export default function PostPage({
           </div>
           <div
             id={darkMode ? "markdown-dark" : "markdown-light"}
-            className="flex flex-col"
+            className="flex flex-col  transition-all"
           >
-            <div
-              id="markdown"
-              dangerouslySetInnerHTML={{ __html: marked(content) }}
-            ></div>
+            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
           </div>
         </section>
       </section>

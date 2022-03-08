@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { useGlobal } from "../context/globalContext";
+import Header from "../components/header";
 
 export default function Home({ posts }) {
   const { darkMode, toggleDarkMode } = useGlobal();
@@ -16,6 +17,7 @@ export default function Home({ posts }) {
         <meta name="description" content="Main Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <section
         className={
           darkMode

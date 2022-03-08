@@ -9,34 +9,38 @@ pre {
   margin-bottom: 10px;
 }
 
-#markdown h2 {
+#markdown-dark h2 {
+  color: aliceblue;
   font-weight: bold;
   font-size: x-large;
 }
 
-#markdown ol {
+#markdown-dark ol {
+  color: aliceblue;
   list-style: inside;
   list-style-type: decimal;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-#markdown li {
+#markdown-dark li {
+  color: aliceblue;
   font-weight: 500;
   font-size: large;
 }
 
-#markdown a {
-  color: rgb(0, 225, 255);
+#markdown-dark a {
+  color: rgb(208, 46, 223);
 }
 
-#markdown p {
+#markdown-dark p {
+  color: aliceblue;
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: large;
 }
 
-#markdown {
+#markdown-dark {
   margin-top: 20px;
 }
 
@@ -128,6 +132,44 @@ pre {
 
 #markdown-dark .hljs-strong {
   font-weight: bold;
+}
+
+/* Markdown LIGHT --------------------------------------------- */
+
+#markdown-light {
+  margin-top: 20px;
+}
+
+#markdown-light h2 {
+  color: black;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#markdown-light ol {
+  color: black;
+  list-style: inside;
+  list-style-type: decimal;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#markdown-light li {
+  color: black;
+  font-weight: 500;
+  font-size: large;
+}
+
+#markdown-light a {
+  color: rgb(73, 175, 243);
+  text-decoration: underline;
+}
+
+#markdown-light p {
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: large;
 }
 
 #markdown-light pre {
