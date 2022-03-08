@@ -4,8 +4,11 @@ import Post from "../components/post";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { useGlobal } from "../context/globalContext";
 
 export default function Home({ posts }) {
+  const { darkMode, toggleDarkMode } = useGlobal();
+
   return (
     <>
       <Head>
@@ -13,7 +16,13 @@ export default function Home({ posts }) {
         <meta name="description" content="Main Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="flex flex-col items-center min-h-screen bg-slate-600">
+      <section
+        className={
+          darkMode
+            ? "flex flex-col items-center min-h-screen bg-slate-600 pb-20"
+            : "flex flex-col items-center min-h-screen bg-white pb-20"
+        }
+      >
         <section className="flex flex-row flex-wrap justify-center w-1280">
           {posts.map((post, index) => {
             return <Post key={index} post={post} />;

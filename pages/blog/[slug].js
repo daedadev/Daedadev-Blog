@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
+import { useGlobal } from "../../context/globalContext";
 const hljs = require("highlight.js");
 
 export default function PostPage({
@@ -11,7 +12,8 @@ export default function PostPage({
   slug,
   content,
 }) {
-  const [theme, setTheme] = useState("markdown-dark");
+  const { darkMode, toggleDarkMode } = useGlobal();
+
   marked.setOptions({
     langPrefix: "hljs language-",
     highlight: function (code) {
@@ -26,16 +28,31 @@ export default function PostPage({
         <meta name="description" content={excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="flex flex-col items-center min-h-screen bg-slate-600 pb-20">
+      <section
+        className={
+          darkMode
+            ? "flex flex-col items-center min-h-screen bg-slate-600 pb-20"
+            : "flex flex-col items-center min-h-screen bg-white pb-20"
+        }
+      >
         <section className="flex flex-row flex-wrap justify-center w-748">
           <div>
             <h1 className="text-5xl mt-10 mb-5 ">{title}</h1>
-            <div className="bg-slate-700 text-slate-300 mb-5 pl-5">
+            <div
+              className={
+                darkMode
+                  ? "bg-slate-700 text-slate-300 mb-5 pl-5"
+                  : "bg-slate-300 text-slate-800 mb-5 pl-5"
+              }
+            >
               Posted on {date}
             </div>
-            <img src={cover_image}></img>
+            <img className="rounded-md" src={cover_image}></img>
           </div>
-          <div id={theme} className="flex flex-col pl-20 pr-20">
+          <div
+            id={darkMode ? "markdown-dark" : "markdown-light"}
+            className="flex flex-col"
+          >
             <div
               id="markdown"
               dangerouslySetInnerHTML={{ __html: marked(content) }}
