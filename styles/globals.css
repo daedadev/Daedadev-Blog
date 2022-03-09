@@ -2,11 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 pre {
   border-radius: 5px;
   padding: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
+  overflow-x: scroll;
 }
 
 #markdown-dark h2 {
@@ -30,7 +35,8 @@ pre {
 }
 
 #markdown-dark a {
-  color: rgb(208, 46, 223);
+  color: rgb(198, 101, 255);
+  text-decoration: underline;
 }
 
 #markdown-dark p {

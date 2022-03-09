@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm";
 
 function Footer() {
   return (
-    <footer className="flex flex-row w-full h-full justify-evenly items-center pt-10 pb-20 bg-gray-400">
+    <footer className="flex flex-col lg:flex-row w-full h-full justify-evenly items-center pt-10 pb-20 bg-gray-400">
       <h2 className="m-10 text-2xl w-1/2 text-center">
         Created by: Daniel Moore
       </h2>

@@ -6,14 +6,17 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import { useGlobal } from "../../context/globalContext";
 import Header from "../../components/header";
+import handleScroll, { checkScrolled } from "../../functions/ScrollFunctions";
 const hljs = require("highlight.js");
 
 export default function PostPage({
-  frontmatter: { title, date, cover_image, excerpt },
+  frontmatter: { title, date, cover_image, excerpt, sections },
   slug,
   content,
 }) {
   const [scrollCount, setScrollCount] = useState(0);
+  const [tableContents, setTableContents] = useState([]);
+  const [scrolledArticle, setScrolledArticle] = useState(false);
   const { darkMode, toggleDarkMode } = useGlobal();
 
   marked.setOptions({
@@ -24,19 +27,19 @@ export default function PostPage({
   });
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    setTableContents(sections.split("/"));
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+    setScrolledArticle(checkScrolled(85));
+    return () => window.removeEventListener("scroll", updateScroll);
   });
 
-  const handleScroll = () => {
-    const MaxHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    const ScrollPercent = (window.scrollY / MaxHeight) * 100;
-
-    console.log(document.documentElement.clientHeight);
-    setScrollCount(ScrollPercent);
-  };
+  function updateScroll() {
+    // Scroll function from handleScroll.js
+    setScrollCount(handleScroll());
+  }
 
   return (
     <>
@@ -60,15 +63,49 @@ export default function PostPage({
           style={{ width: `${scrollCount}%` }}
         ></div>
       </div>
-
       <section
         className={
           darkMode
-            ? "flex flex-col items-center min-h-screen bg-slate-600 pb-20 transition-all"
-            : "flex flex-col items-center min-h-screen bg-white pb-20 transition-all"
+            ? "flex flex-row justify-center min-h-screen bg-slate-600 pb-20 transition-all"
+            : "flex flex-row justify-center min-h-screen bg-white pb-20 transition-all"
         }
       >
-        <section className="flex flex-row flex-wrap justify-center w-748">
+        <div
+          className={
+            scrolledArticle
+              ? "xl:flex fixed hidden w-96 top-0 items-start justify-center left-0 h-full  ease-in-out duration-500"
+              : "xl:flex absolute hidden w-96 top-25 items-start justify-center left-0 h-full ease-in-out duration-500"
+          }
+        >
+          <div
+            className={
+              darkMode
+                ? "xl:flex flex-col hidden bg-slate-700 text-slate-400 font-semibold h-fit w-fit mt-72 p-5 rounded-md ease-in-out duration-500"
+                : "xl:flex flex-col hidden bg-slate-200 text-slate-700 font-semibold h-fit w-fit mt-72 p-5 rounded-md ease-in-out duration-500"
+            }
+          >
+            <h1 className="mb-2">Table of Contents</h1>
+            <a className="hover:cursor-pointer mb-2" href={`#top`}>
+              - To Top
+            </a>
+            {tableContents.map((heading, index) => {
+              return (
+                <a
+                  className=" hover:cursor-pointer mb-2"
+                  href={`#${heading}`}
+                  key={index}
+                >
+                  - {heading}
+                </a>
+              );
+            })}
+            <a className=" hover:cursor-pointer mb-2" href={`#bottom`}>
+              - To Bottom
+            </a>
+          </div>
+        </div>
+        <a name="top"></a>
+        <section className="flex flex-row flex-wrap justify-center w-11/12 lg:w-748">
           <div>
             <h1
               className={
@@ -92,10 +129,14 @@ export default function PostPage({
           </div>
           <div
             id={darkMode ? "markdown-dark" : "markdown-light"}
-            className="flex flex-col  transition-all"
+            className="flex flex-row  transition-all w-full"
           >
-            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+            <div
+              className="w-full"
+              dangerouslySetInnerHTML={{ __html: marked(content) }}
+            ></div>
           </div>
+          <a name="bottom"></a>
         </section>
       </section>
     </>
@@ -128,9 +169,9 @@ export async function getStaticProps({ params: { slug } }) {
   return {
     props: {
       frontmatter,
+      content,
       slug,
       excerpt,
-      content,
     },
   };
 }

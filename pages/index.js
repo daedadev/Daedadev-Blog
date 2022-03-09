@@ -25,7 +25,7 @@ export default function Home({ posts }) {
             : "flex flex-col items-center min-h-screen bg-white pb-20"
         }
       >
-        <section className="flex flex-row flex-wrap justify-center w-1280">
+        <section className="flex flex-col lg:flex-row flex-wrap justify-center items-center w-full xl:w-1280">
           {posts.map((post, index) => {
             return <Post key={index} post={post} />;
           })}
