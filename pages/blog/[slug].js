@@ -73,25 +73,40 @@ export default function PostPage({
         <div
           className={
             scrolledArticle
-              ? "xl:flex fixed hidden w-96 top-0 items-start justify-center left-0 h-full  ease-in-out duration-500"
-              : "xl:flex absolute hidden w-96 top-25 items-start justify-center left-0 h-full ease-in-out duration-500"
+              ? "xl:flex fixed hidden w-60 top-0 items-start justify-center left-0 h-full  ease-in-out duration-500"
+              : "xl:flex absolute hidden w-60 top-25 items-start justify-center left-0 h-full ease-in-out duration-500"
           }
         >
           <div
             className={
               darkMode
-                ? "xl:flex flex-col hidden bg-slate-700 text-slate-400 font-semibold h-fit w-fit mt-72 p-5 rounded-md ease-in-out duration-500"
-                : "xl:flex flex-col hidden bg-slate-200 text-slate-700 font-semibold h-fit w-fit mt-72 p-5 rounded-md ease-in-out duration-500"
+                ? "xl:flex flex-col hidden bg-slate-700 text-slate-400 font-semibold h-fit w-full mt-72 p-5 ml-5 rounded-md ease-in-out duration-500 "
+                : "xl:flex flex-col hidden bg-slate-100 text-slate-500 font-semibold h-fit w-full mt-72 p-5 ml-5 rounded-md ease-in-out duration-500"
             }
           >
-            <h1 className="mb-2">Table of Contents</h1>
-            <a className="hover:cursor-pointer mb-2" href={`#top`}>
+            <h1
+              className={darkMode ? "mb-2 text-slate-200" : "mb-2 text-black"}
+            >
+              Table of Contents
+            </h1>
+            <a
+              className={
+                darkMode
+                  ? "hover:cursor-pointer mb-2 hover:text-slate-200"
+                  : "hover:cursor-pointer mb-2 hover:text-black"
+              }
+              href={`#top`}
+            >
               - To Top
             </a>
             {tableContents.map((heading, index) => {
               return (
                 <a
-                  className=" hover:cursor-pointer mb-2"
+                  className={
+                    darkMode
+                      ? "hover:cursor-pointer mb-2 hover:text-slate-200"
+                      : "hover:cursor-pointer mb-2 hover:text-black"
+                  }
                   href={`#${heading}`}
                   key={index}
                 >
@@ -99,7 +114,14 @@ export default function PostPage({
                 </a>
               );
             })}
-            <a className=" hover:cursor-pointer mb-2" href={`#bottom`}>
+            <a
+              className={
+                darkMode
+                  ? "hover:cursor-pointer mb-2 hover:text-slate-200"
+                  : "hover:cursor-pointer mb-2 hover:text-black"
+              }
+              href={`#bottom`}
+            >
               - To Bottom
             </a>
           </div>
