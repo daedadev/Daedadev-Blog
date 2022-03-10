@@ -6,7 +6,7 @@ import matter from "gray-matter";
 import { marked } from "marked";
 import { useGlobal } from "../../context/globalContext";
 import Header from "../../components/header";
-import handleScroll, { checkScrolled } from "../../functions/ScrollFunctions";
+import handleScroll from "../../utils";
 import TableOfContents from "../../components/tableofContents";
 const hljs = require("highlight.js");
 

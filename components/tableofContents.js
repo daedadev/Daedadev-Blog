@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useGlobal } from "../context/globalContext";
-import { checkScrolled } from "../functions/ScrollFunctions";
+import { checkScrolled } from "../utils/";
 
 export default function TableOfContents({ articleSections }) {
   const [scrolledArticle, setScrolledArticle] = useState(false);

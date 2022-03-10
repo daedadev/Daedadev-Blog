@@ -6,6 +6,7 @@ import path from "path";
 import matter from "gray-matter";
 import { useGlobal } from "../context/globalContext";
 import Header from "../components/header";
+import { sortByDate } from "../utils";
 
 export default function Home({ posts }) {
   const { darkMode, toggleDarkMode } = useGlobal();
@@ -55,7 +56,7 @@ export async function getStaticProps() {
   });
   return {
     props: {
-      posts,
+      posts: posts.sort(sortByDate),
     },
   };
 }

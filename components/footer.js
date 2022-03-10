@@ -1,9 +1,8 @@
 import React from "react";
-import ContactForm from "./ContactForm";
 import { useGlobal } from "../context/globalContext";
 
 function Footer() {
-  const { darkMode, toggleDarkMode } = useGlobal();
+  const { darkMode } = useGlobal();
 
   return (
     <footer

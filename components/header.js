@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useGlobal } from "../context/globalContext";
-import handleScroll, { checkScrolled } from "../functions/ScrollFunctions";
+import handleScroll, { checkScrolled } from "../utils";
 
 export default function Header() {
   const { darkMode, toggleDarkMode } = useGlobal();
