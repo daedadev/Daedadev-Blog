@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wron1/Personal-Blog.git"
+    "url": "git+https://github.com/daedadev/Personal-Blog.git"
   },
   "author": "Daniel Moore",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wron1/Personal-Blog/issues"
+    "url": "https://github.com/daedadev/Personal-Blog/issues"
   },
-  "homepage": "https://github.com/wron1/Personal-Blog#readme",
+  "homepage": "https://github.com/daedadev/Personal-Blog#readme",
   "dependencies": {
     "@tailwindcss/forms": "^0.4.0",
     "dotenv": "^16.0.0",

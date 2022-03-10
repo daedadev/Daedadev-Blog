@@ -7,6 +7,7 @@ import { marked } from "marked";
 import { useGlobal } from "../../context/globalContext";
 import Header from "../../components/header";
 import handleScroll, { checkScrolled } from "../../functions/ScrollFunctions";
+import TableOfContents from "../../components/tableofContents";
 const hljs = require("highlight.js");
 
 export default function PostPage({
@@ -16,7 +17,6 @@ export default function PostPage({
 }) {
   const [scrollCount, setScrollCount] = useState(0);
   const [tableContents, setTableContents] = useState([]);
-  const [scrolledArticle, setScrolledArticle] = useState(false);
   const { darkMode, toggleDarkMode } = useGlobal();
 
   marked.setOptions({
@@ -32,7 +32,6 @@ export default function PostPage({
 
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
-    setScrolledArticle(checkScrolled(85));
     return () => window.removeEventListener("scroll", updateScroll);
   });
 
@@ -70,62 +69,7 @@ export default function PostPage({
             : "flex flex-row justify-center min-h-screen bg-white pb-20 transition-all"
         }
       >
-        <div
-          className={
-            scrolledArticle
-              ? "xl:flex fixed hidden w-60 top-0 items-start justify-center left-0 h-full  ease-in-out duration-500"
-              : "xl:flex absolute hidden w-60 top-25 items-start justify-center left-0 h-full ease-in-out duration-500"
-          }
-        >
-          <div
-            className={
-              darkMode
-                ? "xl:flex flex-col hidden bg-slate-700 text-slate-400 font-semibold h-fit w-full mt-72 p-5 ml-5 rounded-md ease-in-out duration-500 "
-                : "xl:flex flex-col hidden bg-slate-100 text-slate-500 font-semibold h-fit w-full mt-72 p-5 ml-5 rounded-md ease-in-out duration-500"
-            }
-          >
-            <h1
-              className={darkMode ? "mb-2 text-slate-200" : "mb-2 text-black"}
-            >
-              Table of Contents
-            </h1>
-            <a
-              className={
-                darkMode
-                  ? "hover:cursor-pointer mb-2 hover:text-slate-200"
-                  : "hover:cursor-pointer mb-2 hover:text-black"
-              }
-              href={`#top`}
-            >
-              - To Top
-            </a>
-            {tableContents.map((heading, index) => {
-              return (
-                <a
-                  className={
-                    darkMode
-                      ? "hover:cursor-pointer mb-2 hover:text-slate-200"
-                      : "hover:cursor-pointer mb-2 hover:text-black"
-                  }
-                  href={`#${heading}`}
-                  key={index}
-                >
-                  - {heading}
-                </a>
-              );
-            })}
-            <a
-              className={
-                darkMode
-                  ? "hover:cursor-pointer mb-2 hover:text-slate-200"
-                  : "hover:cursor-pointer mb-2 hover:text-black"
-              }
-              href={`#bottom`}
-            >
-              - To Bottom
-            </a>
-          </div>
-        </div>
+        <TableOfContents articleSections={tableContents} />
         <a name="top"></a>
         <section className="flex flex-row flex-wrap justify-center w-11/12 lg:w-748">
           <div>
