@@ -14,8 +14,8 @@ export default function Home({ posts }) {
   return (
     <>
       <Head>
-        <title>Dashboard</title>
-        <meta name="description" content="Main Page" />
+        <title>Daedadev Blog</title>
+        <meta name="description" content="Home Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

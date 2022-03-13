@@ -11,13 +11,17 @@ pre {
   padding: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 #markdown-dark h2 {
   color: aliceblue;
   font-weight: bold;
   font-size: x-large;
+}
+
+#markdown-dark details {
+  color: aliceblue;
 }
 
 #markdown-dark ol {

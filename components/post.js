@@ -24,7 +24,7 @@ export default function Post({ post }) {
         </h1>
       </div>
       <div className="flex flex-col justify-between w-full h-full">
-        <h3 className="m-2 xl:h-44">{post.frontmatter.excerpt}</h3>
+        <h3 className="m-2 xl:h-32">{post.frontmatter.excerpt}</h3>
         <h1 className="font-semibold ml-2 mr-2 pl-2 bg-slate-300">
           Posted {post.frontmatter.date}
         </h1>
