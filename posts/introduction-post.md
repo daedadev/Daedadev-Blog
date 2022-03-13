@@ -3,7 +3,7 @@ title: "First Post"
 date: "March 9 2022"
 excerpt: "Welcome to my blog, I hope you enjoy!"
 sections: "Intro/Direction/Forewarning"
-cover_image: "/images/posts/intro.png"
+cover_image: "/images/posts/intro.PNG"
 ---
 
 <a name="Intro"></a>
