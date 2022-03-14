@@ -32,8 +32,8 @@ export default function Post({ post }) {
           <a
             className={
               darkMode
-                ? "flex w-fit p-1 text-slate-200 rounded-md bg-slate-800 m-2 mt-5"
-                : "flex w-fit p-1 text-slate-100 rounded-md bg-gray-500 m-2 mt-5"
+                ? "flex w-fit p-1 text-slate-300 rounded-md bg-slate-700 m-2 mt-5 hover:bg-slate-800 hover:text-slate-200 transition-all"
+                : "flex w-fit p-1 text-black rounded-md bg-slate-300 m-2 mt-5 hover:bg-slate-500 hover:text-white transition-all"
             }
           >
             Read Article

@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import Link from "next/link";
 import Head from "next/head";
 import fs from "fs";
 import path from "path";
@@ -92,6 +93,17 @@ export default function PostPage({
               Posted on {date}
             </div>
             <img className="rounded-md" src={cover_image}></img>
+            <Link href="/" passHref>
+              <button
+                className={
+                  darkMode
+                    ? "w-52 bg-slate-700 rounded-md mt-10 text-slate-300 hover:bg-slate-800 hover:text-slate-200 transition-all"
+                    : "w-52 bg-slate-300 rounded-md mt-10 text-black hover:bg-slate-500 hover:text-white transition-all"
+                }
+              >
+                Back
+              </button>
+            </Link>
           </div>
           <div
             id={darkMode ? "markdown-dark" : "markdown-light"}
@@ -102,7 +114,20 @@ export default function PostPage({
               dangerouslySetInnerHTML={{ __html: marked(content) }}
             ></div>
           </div>
-          <a name="bottom"></a>
+          <div className="w-full">
+            <a name="bottom"></a>
+            <Link href="#top" passHref>
+              <button
+                className={
+                  darkMode
+                    ? "w-52 bg-slate-700 rounded-md mt-10 text-slate-300 hover:bg-slate-800 hover:text-slate-200 transition-all"
+                    : "w-52 bg-slate-300 rounded-md mt-10 text-black hover:bg-slate-500 hover:text-white transition-all"
+                }
+              >
+                To Top
+              </button>
+            </Link>
+          </div>
         </section>
       </section>
     </>

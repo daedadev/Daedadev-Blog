@@ -30,7 +30,7 @@ export default function Header() {
       >
         <div className="flex flex-row items-center justify-between w-11/12 xl:w-1280 sm:w-11/12">
           <Link href={"/"}>
-            <a className="text-slate-100">Blog</a>
+            <a className="text-slate-100 font-semibold text-xl">DaedaDev</a>
           </Link>
           <div className="flex flex-row">
             <label className="flex w-16 pt-1 pb-1 bg-slate-300 rounded-3xl hover:cursor-pointer">
@@ -58,7 +58,7 @@ export default function Header() {
     >
       <div className="flex flex-row items-center justify-between w-11/12 xl:w-1280 sm:w-11/12">
         <Link href={"/"}>
-          <a className="text-slate-900">Blog</a>
+          <a className="text-slate-900 font-semibold text-xl">DaedaDev</a>
         </Link>
         <div className="flex flex-row">
           <label className="flex w-16 pt-1 pb-1 bg-slate-500 rounded-3xl hover:cursor-pointer">
