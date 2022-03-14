@@ -11,10 +11,10 @@ cover_image: "/images/posts/cmsPart1.png"
 
 ## Introduction
 
-While on my path of learning how to program, myself being a junior fullstack developer,
-the hardest thing that Ive found on my journey has been direction. To that point
+While on my path of learning how to program, myself being a junior full stack developer,
+the hardest thing that I've found on my journey has been direction. To that point
 it has also been more of what to do not how to do it. There are plenty of tutorials
-online telling you how to use X framework with Y dependancy but I've found that
+online telling you how to use X framework with Y dependency but I've found that
 there is no **big project** that will make you a better developer and that what
 you create is up to you.
 
@@ -27,10 +27,10 @@ content management system.
 
 ## Background
 
-So I was digging through some shopify documentation, watching a couple of tutorials
+So I was digging through some Shopify documentation, watching a couple of tutorials
 and learned that shopify's content management system could be implemented separately
 and used in an iFrame in their developer portal. So the idea came to me to create
-just that and then put up my own mock store front attatched to it.
+just that and then put up my own mock store front attached to it.
 
 So with that being said I needed to select technologies to use and for that I just
 went with what comes quickest to me and that is a simple MERN stack with MySQL.
@@ -42,7 +42,7 @@ went with what comes quickest to me and that is a simple MERN stack with MySQL.
 - Sequelize
 
 Sequelize as an ORM has been something I've really been digging into lately and
-im realizing that ORM's in general are powerful technologies. Their mobility and
+i'm realizing that ORM's in general are powerful technologies. Their mobility and
 functionality was something I took for granted while learning the MERN stack. Migrations
 being a fairly big part of my more recent learning.
 
@@ -104,15 +104,15 @@ ClothingItem.hasMany(ClothingStock, {
    </pre>
 </details>
 <a name="One Size Doesn't Fit All"></a>
-
+ 
 ## One Size Doesn't Fit All
-
+ 
 Another complexity besides relationships was how to handle different sizes. Each
-color has its own stock sure, but not directly. Atleast not in a way that effects
+color has its own stock, sure, but not directly. At least not in a way that effects
 the customer. Stock is tied down to the color and then furthermore the size.
-
+ 
 So I used simple small medium large conventions and added that onto the stock model.
-
+ 
 ```
     xs: {
       type: DataTypes.INTEGER,
@@ -135,24 +135,24 @@ So I used simple small medium large conventions and added that onto the stock mo
       allowNull: false,
     },
 ```
-
+ 
 So that about sums up the complexity. A single item of clothing has a certain
 amount of colors to chose from. Selecting a color will show you available sizes
 in that color. Then selecting a size and purchasing will diminish the stock in
 that size and color.
-
+ 
 It seems like a good way of thinking about the concept but I suppose only time
 will tell, or moreso only a better programmer than me will tell.
-
+ 
 <a name="Closing Thoughts"></a>
-
+ 
 ## Closing Thoughts
-
+ 
 Overall this project has been very exciting. Personally I am a bit more
 of a backend developer than a frontend one so the idea of creating an API is
 very enjoyable. The main problem I am facing now is developing the interface
 to interact with the API. Tailwind does come in really handy and has actually
 been my go to for frontend design lately. This blog was made using it.
-
+ 
 Hope you all have a wonderful day.
 Until next time.
