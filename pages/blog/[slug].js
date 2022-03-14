@@ -46,6 +46,7 @@ export default function PostPage({
       <Head>
         <title>{title}</title>
         <meta name="description" content={excerpt} />
+        <meta name="author" content="Daniel Moore" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div

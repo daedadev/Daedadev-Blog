@@ -16,6 +16,13 @@ export default function Home({ posts }) {
       <Head>
         <title>Daedadev Blog</title>
         <meta name="description" content="Home Page" />
+        <meta property="og:type" content="Website" />
+        <meta
+          name="image"
+          property="og:image"
+          content="https://imgur.com/MmDNs0b"
+        />
+        <meta name="author" content="Daniel Moore" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
