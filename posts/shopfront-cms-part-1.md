@@ -35,11 +35,11 @@ just that and then put up my own mock store front attached to it.
 So with that being said I needed to select technologies to use and for that I just
 went with what comes quickest to me and that is a simple MERN stack with MySQL.
 
-- React
-- Tailwind
-- Express
-- MySQL
-- Sequelize
+1. React
+2. Tailwind
+3. Express
+4. MySQL
+5. Sequelize
 
 Sequelize as an ORM has been something I've really been digging into lately and
 i'm realizing that ORM's in general are powerful technologies. Their mobility and

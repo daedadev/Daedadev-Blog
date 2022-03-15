@@ -37,6 +37,11 @@ export default function Home({ posts }) {
           {posts.map((post, index) => {
             return <Post key={index} post={post} />;
           })}
+          <section
+            className={
+              "flex flex-col xl:w-1/3 w-11/12 lg:w-2/3  justify-center items-center h-fit mt-10 rounded-md  lg:p-3 lg:m-10"
+            }
+          ></section>
         </section>
       </section>
     </>
