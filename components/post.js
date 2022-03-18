@@ -10,7 +10,7 @@ export default function Post({ post }) {
       className={
         darkMode
           ? "flex flex-col xl:w-1/3 w-11/12 lg:w-2/3 bg-slate-400 justify-center items-center h-fit mt-10 rounded-md  lg:p-3 lg:m-10 shadow-lg"
-          : "flex flex-col xl:w-1/3 w-11/12 lg:w-2/3 bg-slate-100 justify-center items-center h-fit mt-10 rounded-md  lg:p-3 lg:m-10 shadow-lg"
+          : "flex flex-col xl:w-1/3 w-11/12 lg:w-2/3 bg-slate-100 border border-slate-300 justify-center items-center h-fit mt-10 rounded-md  lg:p-3 lg:m-10 shadow-lg"
       }
     >
       <div className="flex flex-col w-full items-center justify center">

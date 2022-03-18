@@ -22,8 +22,8 @@ export default function TableOfContents({ articleSections }) {
       <div
         className={
           darkMode
-            ? "xl:flex flex-col hidden bg-slate-700 text-slate-400 font-semibold h-fit w-full mt-72 p-5 ml-5 rounded-md ease-in-out duration-500 "
-            : "xl:flex flex-col hidden bg-slate-100 text-slate-500 font-semibold h-fit w-full mt-72 p-5 ml-5 rounded-md ease-in-out duration-500"
+            ? "xl:flex flex-col hidden bg-slate-700 text-slate-400 border border-slate-500 font-semibold h-fit w-full mt-72 p-5 ml-5 rounded-md ease-in-out duration-500 "
+            : "xl:flex flex-col hidden bg-slate-100 text-slate-500 border border-slate-300 font-semibold h-fit w-full mt-72 p-5 ml-5 rounded-md ease-in-out duration-500"
         }
       >
         <h1 className={darkMode ? "mb-2 text-slate-200" : "mb-2 text-black"}>
