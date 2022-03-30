@@ -174,7 +174,9 @@ router.put("/", async (req, res) => {
 });
 ```
 
+<details>
 In Sequelize creating/updating items is done with a promise that resolves. Because of this you'll see some nested creates/updates that happen due to dependency related creation.
+</details>
 
 So it is definitely a lot of lines but once it's broken down it will make a lot more sense. So looking back at Figure 1 you can see that there are 4 possible arrays to go through. I'll explain the **color** and **clothing_stock** portions when I cover the POST route. For now I'll detail **added_color** and **deleted_color**.
 
