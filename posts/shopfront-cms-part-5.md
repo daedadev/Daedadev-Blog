@@ -184,29 +184,29 @@ The **shipping** table contains the name or type of shipping, a price and then t
 So now that we have discussed the way the backend works let me go over the frontend.
 
 **Inventory Page**
-![Inventory Page Image](/images/ShopfrontCMS/InventoryPage.png)
+![Inventory Page Image](/images/ShopfrontCMS/InventoryPage.PNG)
 
 While in the inventory page tab, you will be met with your entire inventory. This includes all of the clothing_item objects you have created as well as their variants/colors. For the first clothing item listed, in order from left to right, you can see the item name, its price, and the total stock. Below that is a list of colors. Clicking on a color will open up a tab displaying all of the current stock numbers and their correlating sizes.
 
 **Edit Inventory Modal**
-![Edit Inventory Modal Image](/images/ShopfrontCMS/InventoryEdit.png)
+![Edit Inventory Modal Image](/images/ShopfrontCMS/InventoryEdit.PNG)
 
 Clicking on the edit button to the far left will spawn a modal with all of the selected clothing item's data. From here you can edit all of the various attributes involved with the creation of a clothing item. This includes colors/variants as well as stock. The way I created the payload to handle this particular method of editing may be a bit far fetched but it is working and works to scale.
 
 To add a color click the plus button in the far most bottom left corner of the modal. Clicking the close button will exit the modal without saving any currently made changes, and clicking the save button will submit the changes made.
 
 **Delete Color Modal**
-![Delete Color Modal Image](/images/ShopfrontCMS/DeleteColor.png)
+![Delete Color Modal Image](/images/ShopfrontCMS/DeleteColor.PNG)
 
 Upon clicking the red minus button found below each color you will be met with another modal asking if you would like to confirm the deletion of the color. Selecting **Delete** will remove the color and **cancel** will close the modal without any changes.
 
 **Create Item Modal**
-![Create Item Modal Image](/images/ShopfrontCMS/CreateItemModal.png)
+![Create Item Modal Image](/images/ShopfrontCMS/CreateItemModal.PNG)
 
 Going back to the **Inventory Page** and clicking the **Add Item** button in the bottom right corner you will be met with a modal similar to the **Edit Inventory Modal** however this one is completely empty and yours to fill out. The functionalities are the exact same between the two modals.
 
 **Delete Item Modal**
-![Delete Item Modal Image](/images/ShopfrontCMS/DeleteItemModal.png)
+![Delete Item Modal Image](/images/ShopfrontCMS/DeleteItemModal.PNG)
 
 Selecting the **Delete** button to the right of the **Edit** button found to the top right of each clothing item will bring up a modal asking "Are You Sure You Want To Delete This Item?". Selecting **Delete** will remove the selected clothing item and selecting cancel will close the modal without any changes.
 
@@ -215,13 +215,13 @@ Selecting the **Delete** button to the right of the **Edit** button found to the
 ## Usage - Sold
 
 **Sold Page**
-![Sold page Image](/images/ShopfrontCMS/SoldPage.png)
+![Sold page Image](/images/ShopfrontCMS/SoldPage.PNG)
 
 Clicking on the **Sold** text in the sidebar will take you to the sold page where you will see a listing of all of your sales/orders. In order from right to left you'll see the item name, price, shipping type, date ordered, order number, fulfilled checkbox and a button to click for more details on that order.
 
 Clicking the checkbox to either check fulfilled or uncheck will immediately edit the selected order item. If checked then **order_status** will be set to true, and if unchecked it will be set to false.
 
-![Order modal Image](/images/ShopfrontCMS/OrderModal.png)
+![Order modal Image](/images/ShopfrontCMS/OrderModal.PNG)
 
 Clicking the **Details** button at the far right will open up a modal with the information corresponding to the selected order. This shows even more information and is a sort of receipt for the shop owner to view.
 
@@ -230,7 +230,7 @@ Clicking the **Details** button at the far right will open up a modal with the i
 ## Usage - Users
 
 **Users Page**
-![Users page Image](/images/ShopfrontCMS/UsersPage.png)
+![Users page Image](/images/ShopfrontCMS/UsersPage.PNG)
 
 This page lists the users in your store and displays the orders per user. This page is fairly similar to the **Sold Page** in that it has about the same order information however the top of each section has the users name, email, and join date.
 
@@ -241,7 +241,7 @@ Clicking the details button next an order will open a modal with the same inform
 ## Usage - Statistics
 
 **Statistics Page**
-![Statistics page top Image](/images/ShopfrontCMS/StatisticsPage1.png)
+![Statistics page top Image](/images/ShopfrontCMS/StatisticsPage1.PNG)
 
 Clicking on the **Statistics** text in the sidebar will take you to the statistics page. This page displays useful numbers in relationship to sales as well as costs to take into consideration when running your business.
 
@@ -249,11 +249,11 @@ This page utilizes chartjs and react-chartjs-2 to create these really nice looki
 
 At the top you'll see your income per day and below that you can see your total costs and total income. These numbers are color coded and include the shipping income, shipping costs, item income, and item costs.
 
-![Statistics page midway Image](/images/ShopfrontCMS/StatisticsPage2.png)
+![Statistics page midway Image](/images/ShopfrontCMS/StatisticsPage2.PNG)
 
 Moving to the middle of the page you'll see income by category. This is displayed in a polar area chart. You can visualize sale percentage as well as view the actual amount from just looking.
 
-![Statistics page bottom Image](/images/ShopfrontCMS/StatisticsPage3.png)
+![Statistics page bottom Image](/images/ShopfrontCMS/StatisticsPage3.PNG)
 
 At the bottom of the page is where you will find the stock numbers of all the inventory in your store. Total stock being the culmination of everything you are selling. Unique stock is the amount of individual items you are selling, not including their colors/variants. Then you have your stock per category which is generated based on the categories you have set up.
 
@@ -263,10 +263,10 @@ At the bottom of the page is where you will find the stock numbers of all the in
 
 While there aren't a lot of discrepancies between the desktop and mobile versions of the application there are a slight few.
 
-![Mobile View Inventory page](/images/ShopfrontCMS/MobileView1.png)
+![Mobile View Inventory page](/images/ShopfrontCMS/MobileView1.PNG)
 The main difference is going to be that the sidebar is now hidden and is controlled by a button in the lower left hand corner. Clicking this button will open up the sidebar and you can navigate through the pages from there.
 
-![Mobile View Inventory page with opened sidebar](/images/ShopfrontCMS/MobileView2.png)
+![Mobile View Inventory page with opened sidebar](/images/ShopfrontCMS/MobileView2.PNG)
 
 The sidebar layout is the same just instead of text there are now icons representing each page you can navigate to.
 
