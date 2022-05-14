@@ -20,6 +20,7 @@ function Footer() {
       <div className="flex flex-row w-1/2 justify-evenly items-center">
         <Link href={"https://github.com/daedadev"} passHref>
           <Image
+            className="cursor-pointer"
             width={80}
             height={80}
             src="https://img.icons8.com/color/240/000000/github--v1.png"
@@ -29,6 +30,7 @@ function Footer() {
 
         <Link href={"https://twitter.com/Daedadev"} passHref>
           <Image
+            className="cursor-pointer"
             width={80}
             height={80}
             src="https://img.icons8.com/color/240/000000/twitter--v1.png"
@@ -38,6 +40,7 @@ function Footer() {
 
         <Link href={"https://www.linkedin.com/in/danielmoore201/"} passHref>
           <Image
+            className="cursor-pointer"
             width={80}
             height={80}
             src="https://img.icons8.com/color/240/000000/linkedin.png"
