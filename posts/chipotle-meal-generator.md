@@ -101,10 +101,10 @@ It took multiple tries but basically I wound up creating gh-pages as a subtree o
 
 Steps were as follows
 
-`npm run build` - creates dist folder
-`git add dist -f` - only adds dist folder to commit
-`git commit -m "Adding dist"` - Set commit message
-`git subtree push --prefix dist origin gh-pages` - push dist to gh-pages subtree
+- `npm run build` - creates dist folder
+- `git add dist -f` - only adds dist folder to commit
+- `git commit -m "Adding dist"` - Set commit message
+- `git subtree push --prefix dist origin gh-pages` - push dist to gh-pages subtree
 
 It was a real headache but a learning process nonetheless. The next part of the stack that gave me a tough time was the "strongly typed" language.
 

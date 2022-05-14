@@ -19,6 +19,18 @@ ul {
   list-style-type: disc;
 }
 
+#markdown-dark p code{
+  background-color: #001741;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+#markdown-dark li code{
+  background-color: #001741;
+  padding: 2px;
+  border-radius: 2px;
+}
+
 #markdown-dark h2 {
   color: aliceblue;
   font-weight: bold;
@@ -60,6 +72,18 @@ ul {
 }
 
 /* -------------------------------------------------------- */
+
+#markdown-light p code{
+  background-color: #dfdfdf;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+#markdown-light li code{
+  background-color: #dfdfdf;
+  padding: 2px;
+  border-radius: 2px;
+}
 
 #markdown-dark pre {
   color: #ffffff;
