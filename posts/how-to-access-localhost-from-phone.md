@@ -3,7 +3,7 @@ title: "How To Access Localhost On Mobile"
 date: "May 17 2022"
 excerpt: "This is a short rundown on how to get your localhost on any device."
 sections: "Background/ngrok/Setup/Usage/Npm Package/conclusion"
-cover_image: "/images/posts/tutorial.PNG"
+cover_image: "/images/posts/tutorial.png"
 ---
 
 <a name="Background"></a>
