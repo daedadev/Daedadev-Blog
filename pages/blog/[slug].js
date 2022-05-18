@@ -48,6 +48,11 @@ export default function PostPage({
         <meta name="description" content={excerpt} />
         <meta name="author" content="Daniel Moore" />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="image"
+          property="og:image"
+          content="https://i.imgur.com/MmDNs0b.png"
+        />
       </Head>
       <div
         className={
