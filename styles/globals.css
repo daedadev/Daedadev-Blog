@@ -20,13 +20,13 @@ ul {
 }
 
 #markdown-dark p code{
-  background-color: #001741;
+  background-color: rgb(48, 54, 78);
   padding: 2px;
   border-radius: 2px;
 }
 
 #markdown-dark li code{
-  background-color: #001741;
+  background-color: rgb(48, 54, 78);
   padding: 2px;
   border-radius: 2px;
 }
