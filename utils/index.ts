@@ -1,4 +1,4 @@
-export default function handleScroll() {
+export default function handleScroll(): number {
   const MaxHeight =
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
@@ -6,7 +6,7 @@ export default function handleScroll() {
   return ScrollPercent;
 }
 
-export function checkScrolled(scrollAmount) {
+export function checkScrolled(scrollAmount: number) {
   let scrollCheck;
   if (window.scrollY > scrollAmount) {
     scrollCheck = true;
@@ -17,6 +17,3 @@ export function checkScrolled(scrollAmount) {
   }
 }
 
-export const sortByDate = (a, b) => {
-  return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
-};

@@ -6,10 +6,12 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Header from "../components/header";
-import { sortByDate } from "../utils";
 
-export default function Home({ posts }: any) {
-  let boool = false;
+interface IStaticProps {
+  posts: IPosts[]
+}
+
+export default function Home({ posts }: IStaticProps) {
   return (
     <>
       <Head>
@@ -26,10 +28,7 @@ export default function Home({ posts }: any) {
       </Head>
       <Header />
       <section
-        className={
-          boool
-            ? "flex flex-col items-center min-h-screen bg-slate-600 pb-20"
-            : "flex flex-col items-center min-h-screen bg-white pb-20"
+        className={"flex flex-col items-center min-h-screen pb-20 bg-white dark:bg-slate-600 transition-all duration-500"
         }
       >
         <section className="flex flex-col lg:flex-row flex-wrap justify-center items-center w-full xl:w-1280">
@@ -45,6 +44,13 @@ export default function Home({ posts }: any) {
       </section>
     </>
   );
+}
+
+export interface IPosts {
+  slug: string;
+  frontmatter: {
+    [key: string]: string;
+  }
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -67,7 +73,12 @@ export const getStaticProps: GetStaticProps = async () => {
   });
   return {
     props: {
-      posts: posts.sort(sortByDate),
+      posts: posts.sort((a, b) => { 
+        const aDate = new Date(a.frontmatter.date);
+        const bDate = new Date(b.frontmatter.date);
+
+        return bDate.getTime() - aDate.getTime()
+      })
     },
   };
 }

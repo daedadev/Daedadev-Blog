@@ -9,6 +9,7 @@ import { marked } from "marked";
 import Header from "../../components/header";
 import handleScroll from "../../utils";
 import TableOfContents from "../../components/tableofContents";
+import { useGlobal } from "../../context/globalContext";
 const hljs = require("highlight.js");
 
 export default function PostPage({
@@ -18,7 +19,7 @@ export default function PostPage({
 }: any) {
   const [scrollCount, setScrollCount] = useState(0);
   const [tableContents, setTableContents] = useState([]);
-  let boool = false;
+  const {setDarkMode, darkMode} = useGlobal();
 
   marked.setOptions({
     langPrefix: "hljs language-",
@@ -55,64 +56,43 @@ export default function PostPage({
         />
       </Head>
       <div
-        className={
-          boool
-            ? "sticky top-0 left-0 bg-slate-600 transition-all"
-            : "sticky top-0 left-0 bg-white transition-all"
+        className={"sticky top-0 left-0 transition-all bg-white dark:bg-slate-600 "
         }
       >
         <Header />
         <div
-          className={
-            boool ? "bg-slate-400 h-1 z-0 " : "bg-slate-600 h-1 z-0"
-          }
+          className={"bg-slate-600 h-1 z-0 dark:bg-slate-400"}
           style={{ width: `${scrollCount}%` }}
         ></div>
       </div>
       <section
-        className={
-          boool
-            ? "flex flex-row justify-center min-h-screen bg-slate-600 pb-20 transition-all"
-            : "flex flex-row justify-center min-h-screen bg-white pb-20 transition-all"
-        }
+        className={"flex flex-row justify-center min-h-screen bg-white pb-20 transition-all dark:bg-slate-600 "}
       >
         <TableOfContents articleSections={tableContents} />
         <a className="top"></a>
         <section className="flex flex-row flex-wrap justify-center w-11/12 lg:w-748">
           <div>
             <h1
-              className={
-                boool
-                  ? "text-5xl mt-10 mb-5 text-slate-100"
-                  : "text-5xl mt-10 mb-5 text-black"
-              }
+              className={"text-5xl mt-10 mb-5 text-black dark:text-slate-100"}
             >
               {title}
             </h1>
             <div
-              className={
-                boool
-                  ? "bg-slate-700 text-slate-300 mb-5 pl-5 transition-all"
-                  : "bg-slate-300 text-slate-800 mb-5 pl-5 transition-all"
-              }
+              className="text-slate-800 bg-slate-300 mb-5 pl-5 transition-all dark:bg-slate-700 dark:text-slate-300"
             >
               Posted on {date}
             </div>
             <img className="rounded-md" src={cover_image}></img>
             <Link href="/" passHref>
               <button
-                className={
-                  boool
-                    ? "w-52 bg-slate-700 rounded-md mt-10 text-slate-300 hover:bg-slate-800 hover:text-slate-200 transition-all"
-                    : "w-52 bg-slate-300 rounded-md mt-10 text-black hover:bg-slate-500 hover:text-white transition-all"
-                }
+                className={"w-52  rounded-md mt-10  transition-all bg-slate-300 text-black hover:bg-slate-500 hover:text-white dark:bg-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-200 dark:text-slate-300"}
               >
                 Back
               </button>
             </Link>
           </div>
           <div
-            id={boool ? "markdown-dark" : "markdown-light"}
+            id={darkMode ? "markdown-dark" : "markdown-light"}
             className="flex flex-row  transition-all w-full"
           >
             <div
@@ -124,11 +104,7 @@ export default function PostPage({
             <a className="bottom"></a>
             <Link href="#top" passHref>
               <button
-                className={
-                  boool
-                    ? "w-52 bg-slate-700 rounded-md mt-10 text-slate-300 hover:bg-slate-800 hover:text-slate-200 transition-all"
-                    : "w-52 bg-slate-300 rounded-md mt-10 text-black hover:bg-slate-500 hover:text-white transition-all"
-                }
+                className={"w-52 rounded-md mt-10 transition-all bg-slate-300 text-black hover:bg-slate-500 hover:text-white dark:text-slate-300 dark:bg-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-200 "}
               >
                 To Top
               </button>
